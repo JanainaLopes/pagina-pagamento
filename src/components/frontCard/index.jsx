@@ -1,30 +1,31 @@
 import { FcSimCardChip } from "react-icons/fc";
 import { LuNfc } from "react-icons/lu";
 
-export default function CardFront({nome, numero}) {
-    return (
-        <div className="w-[600px] h-[350px] bg-black rounded-xl">
-            <div className="w-full h-[30%] flex">
-                <div className="w-[50%] h-full flex items-center pl-4 gap-2">
-                    <div className="w-[70px] h-[70px] rounded-full bg-white"></div>
-                    <div className="w-[50px] h-[50px] rounded-full bg-white"></div>
-                </div>
-                <div className="w-[50%] h-full flex p-4 justify-end">
-                    <p className="text-[20px] text-white">Nome do Banco</p>
-                </div>
-            </div>
-            <div className="w-full h-[40%] flex flex-col">
-                <div className="w-full h-[60%] flex items-center pl-2">
-                    <FcSimCardChip size={90}/> 
-                    <LuNfc size={35} color="#fff"/>
-                </div>
-                <div className="w-full h-[40%] pl-4">
-                    <p className="text-[45px] text-gray-500">{numero || "0000 0000 0000 0000"}</p>
-                </div>
-            </div>
-            <div className="w-full h-[30%] pl-4">
-                <p className="text-white text-[45px]">{nome || "nome no cartão"}</p>
-            </div>
+export default function CardFront({ nome, numero }) {
+  return (
+    <div className="w-[90%] max-w-[400px] h-[220px] md:h-[260px] bg-black rounded-xl p-4 flex flex-col justify-between">
+      <div className="flex justify-between">
+        <div className="flex gap-2">
+          <div className="w-[40px] h-[40px] bg-white rounded-full"></div>
+          <div className="w-[30px] h-[30px] bg-white rounded-full"></div>
         </div>
-    )
+        <p className="text-white text-sm md:text-lg">Nome do Banco</p>
+      </div>
+
+      <div>
+        <div className="flex items-center gap-2">
+          <FcSimCardChip size={50} />
+          <LuNfc size={25} color="#fff" />
+        </div>
+
+        <p className="text-gray-400 text-lg md:text-2xl mt-2">
+          {numero || "0000 0000 0000 0000"}
+        </p>
+      </div>
+
+      <p className="text-white text-lg md:text-xl">
+        {nome || "Nome no cartão"}
+      </p>
+    </div>
+  );
 }

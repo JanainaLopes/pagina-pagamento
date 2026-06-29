@@ -1,14 +1,15 @@
-export default function BackCard({cvv}){
-    return (
-        <div className="w-[600px] h-[350px] bg-black rounded-xl">
-            <div className="w-full h-[30%] flex items-end">
-                <div className="w-full h-[60px] bg-[#2F2F2F]"></div>
-            </div>
-            <div className="w-full h-[70%] flex justify-center pt-[30px]">
-                <div className="w-[70%] h-[50px] bg-[#AEB6BF] flex items-center justify-end">
-                    <p className="text-black text-[20px] mr-2">{cvv || "000"}</p>
-                </div>
-            </div>
+export default function BackCard({ cvv }) {
+  return (
+    <div className="w-[90%] max-w-[400px] h-[220px] md:h-[260px] bg-black rounded-xl flex flex-col">
+      <div className="h-[60px] bg-gray-700 mt-4"></div>
+
+      <div className="flex justify-center items-center flex-1">
+        <div className="w-[80%] h-[40px] bg-gray-300 flex justify-end items-center px-2">
+          <p className="text-black text-lg">
+            {cvv || "000"}
+          </p>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
